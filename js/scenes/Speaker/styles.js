@@ -1,8 +1,14 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+  content: {
+    backgroundColor: '#000000'
+  },
   presenter: {
-    margin: 15
+    backgroundColor: '#ffffff',
+    margin: 15,
+    padding: 15,
+    borderRadius: 10
   },
   picture: {
     flexDirection: 'row',
