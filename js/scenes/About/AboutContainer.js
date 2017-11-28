@@ -11,6 +11,8 @@ import {
 } from 'react-native';
 import { About } from './About';
 
+import styles from './styles.js';
+
 class AboutContainer extends Component {
   // constructor() {
   //   super();
@@ -56,7 +58,11 @@ class AboutContainer extends Component {
 
     // console.log('isloading', this.props.conductData);
     if (this.props.isLoading) {
-      return <ActivityIndicator animating={true} size="small" color="black" />;
+      return (
+        <View style={styles.loading}>
+          <ActivityIndicator animating={true} size="small" color="black" />
+        </View>
+      );
     } else {
       return (
         <About

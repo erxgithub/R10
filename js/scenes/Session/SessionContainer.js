@@ -9,13 +9,21 @@ import {
   ActivityIndicator,
   StatusBar
 } from 'react-native';
-// import realm from '../../config/models.js';
+import realm from '../../config/models.js';
+import { fetchFaves } from '../../redux/modules/faves';
+import { fetchSessions } from '../../redux/modules/sessions';
 
 import Session from './Session';
+import styles from './styles.js';
 
 class SessionContainer extends Component {
   constructor(props) {
     super(props);
+
+    realm.addListener('change', () => {
+      this.props.dispatch(fetchSessions());
+      this.props.dispatch(fetchFaves());
+    });
   }
 
   static route = {
@@ -29,7 +37,7 @@ class SessionContainer extends Component {
   componentWillMount() {
     //console.log(this.props.sessionData.speaker);
     this.props.dispatch(fetchSpeaker(this.props.sessionData.speaker));
-    // console.log(realm.path);
+    this.props.dispatch(fetchSessions());
   }
 
   render() {
@@ -38,7 +46,11 @@ class SessionContainer extends Component {
     const { sessionData, speakerData } = this.props;
 
     if (this.props.isLoading) {
-      return <ActivityIndicator animating={true} size="small" color="black" />;
+      return (
+        <View style={styles.loading}>
+          <ActivityIndicator animating={true} size="small" color="black" />
+        </View>
+      );
     } else {
       return <Session sessionData={sessionData} speakerData={speakerData} />;
     }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, ScrollView } from 'react-native';
+import { View, Text, Image, ScrollView, Linking } from 'react-native';
 import { Header, Icon } from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
 import { goBack } from '../../lib/navigationHelpers';
@@ -44,7 +44,10 @@ const Speaker = ({ speakerData }) => {
           end={{ x: 1.0, y: 0.0 }}
           style={styles.button}
         >
-          <Text onPress={() => goBack()} style={styles.readMore}>
+          <Text
+            onPress={() => Linking.openURL(speakerData.url)}
+            style={styles.readMore}
+          >
             Read More on Wikipedia
           </Text>
         </LinearGradient>

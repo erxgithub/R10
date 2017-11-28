@@ -1,4 +1,5 @@
 import { formatSessionData } from '../../lib/dataFormatHelpers';
+import { queryFaves } from '../../config/models.js';
 
 const firebaseURL = 'https://r10app-95fea.firebaseio.com/sessions.json';
 
@@ -32,13 +33,20 @@ const getSessions = sessions => {
 
 export const fetchSessions = () => dispatch => {
   dispatch(getSessionsLoading());
+  const faveIds = queryFaves();
 
   return fetch(`${firebaseURL}`)
     .then(response => {
       return response.json();
     })
     .then(sessions => {
-      dispatch(getSessions(sessions));
+      const newSessions = sessions.map(session => {
+        const faveToggle = faveIds.includes(session.session_id);
+        session.faveToggle = faveToggle;
+        return session;
+      });
+      // return dispatch(getSessions(sessions));
+      return dispatch(getSessions(newSessions));
     })
     .catch(error => {
       //console.log(error);

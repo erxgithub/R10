@@ -1,6 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+  loading: {
+    justifyContent: 'center',
+    height: '100%'
+  },
   session: {
     margin: 10
   },
@@ -65,7 +69,7 @@ const styles = StyleSheet.create({
     marginLeft: 50,
     marginRight: 50
   },
-  remove: {
+  buttonText: {
     fontFamily: 'Montserrat-Regular',
     fontSize: 20,
     color: '#ffffff',

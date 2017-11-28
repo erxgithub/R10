@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
-import { goToSpeaker } from '../../lib/navigationHelpers';
+import { goToSpeaker, closeSession } from '../../lib/navigationHelpers';
 import Moment from 'react-moment';
 import 'moment-timezone';
 import LinearGradient from 'react-native-linear-gradient';
 
 import Separator from '../../components/Separator';
-// import { createFave, deleteFave } from '../../config/models.js';
+import { createFave, deleteFave } from '../../config/models.js';
 
 import styles from './styles.js';
 
@@ -56,10 +56,27 @@ const Session = ({ sessionData, speakerData }) => {
         end={{ x: 1.0, y: 0.0 }}
         style={styles.button}
       >
-        {/* <Text onPress={() => createFave(faveId)} style={styles.remove}> */}
-        <Text onPress={() => {}} style={styles.remove}>
-          Add to Faves
-        </Text>
+        {sessionData.faveToggle ? (
+          <Text
+            onPress={() => {
+              deleteFave(faveId);
+              closeSession();
+            }}
+            style={styles.buttonText}
+          >
+            Remove from Faves
+          </Text>
+        ) : (
+          <Text
+            onPress={() => {
+              createFave(faveId);
+              closeSession();
+            }}
+            style={styles.buttonText}
+          >
+            Add to Faves
+          </Text>
+        )}
       </LinearGradient>
     </View>
   );
