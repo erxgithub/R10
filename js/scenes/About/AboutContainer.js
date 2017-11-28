@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchConduct } from '../../redux/modules/conduct';
-import { FlatList, Text, View, Image, ActivityIndicator } from 'react-native';
+import {
+  FlatList,
+  Text,
+  View,
+  Image,
+  ActivityIndicator,
+  StatusBar
+} from 'react-native';
 import { About } from './About';
 
 class AboutContainer extends Component {
@@ -34,7 +41,9 @@ class AboutContainer extends Component {
 
   static route = {
     navigationBar: {
-      title: 'About'
+      title: 'About',
+      backgroundColor: '#9963ea',
+      tintColor: '#ffffff'
     }
   };
 
@@ -43,6 +52,8 @@ class AboutContainer extends Component {
   }
 
   render() {
+    StatusBar.setBarStyle('light-content');
+
     // console.log('isloading', this.props.conductData);
     if (this.props.isLoading) {
       return <ActivityIndicator animating={true} size="small" color="black" />;

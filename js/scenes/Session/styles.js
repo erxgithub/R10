@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
     paddingBottom: 10
   },
   button: {
-    backgroundColor: '#9963ea',
     borderRadius: 50,
     alignItems: 'center',
     marginTop: 10,
@@ -69,9 +68,10 @@ const styles = StyleSheet.create({
   remove: {
     fontFamily: 'Montserrat-Regular',
     fontSize: 20,
+    color: '#ffffff',
+    backgroundColor: 'transparent',
     paddingTop: 10,
-    paddingBottom: 10,
-    color: '#ffffff'
+    paddingBottom: 10
   }
 });
 

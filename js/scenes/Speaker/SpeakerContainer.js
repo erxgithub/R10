@@ -8,9 +8,9 @@ import Speaker from './Speaker';
 export default class SpeakerContainer extends Component {
   static route = {
     navigationBar: {
-      visible: true,
-      title: 'About the Speaker',
-      backgroundColor: '#000000',
+      // visible: true,
+      visible: false,
+      backgroundColor: '#9963ea',
       tintColor: '#ffffff'
     }
   };

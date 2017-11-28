@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   button: {
-    backgroundColor: '#9963ea',
     borderRadius: 50,
     alignItems: 'center',
     marginTop: 30,
@@ -46,9 +45,10 @@ const styles = StyleSheet.create({
   readMore: {
     fontFamily: 'Montserrat-Regular',
     fontSize: 18,
+    color: '#ffffff',
+    backgroundColor: 'transparent',
     paddingTop: 10,
-    paddingBottom: 10,
-    color: '#ffffff'
+    paddingBottom: 10
   }
 });
 

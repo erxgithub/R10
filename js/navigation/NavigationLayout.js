@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-//import LinearGradient from 'react-native-linear-gradient';
+// import LinearGradient from 'react-native-linear-gradient';
 
 import {
   StackNavigation,
@@ -11,12 +11,39 @@ import {
 
 import Router from './router.js';
 
-const defaultRouteConfig = {
-  navigationBar: {
-    tintColor: '#ffffff',
-    backgroundColor: '#9963ea'
-  }
-};
+// const defaultRouteConfig = {
+//   navigationBar: {
+//     tintColor: '#ffffff',
+//     backgroundColor: '#9963ea'
+//   }
+// };
+
+// const linearGradient = {
+//   flex: 1,
+//   paddingLeft: 15,
+//   paddingRight: 15,
+//   alignSelf: 'stretch',
+//   height: '100%'
+// };
+
+// const defaultRouteConfig = {
+//   navigationBar: {
+//     tintColor: '#ffffff',
+//     titleStyle: {
+//       fontFamily: 'Montserrat-Regular'
+//     },
+//     renderBackground: () => {
+//       return (
+//         <LinearGradient
+//           style={linearGradient}
+//           colors={['#9963ea ', '#cf392a ']}
+//           start={{ x: 0.5, y: 0.25 }}
+//           end={{ x: 0.0, y: 1.0 }}
+//         />
+//       );
+//     }
+//   }
+// };
 
 export default class NavigationLayout extends Component {
   renderIcon(iconName, isSelected) {
@@ -46,7 +73,7 @@ export default class NavigationLayout extends Component {
         >
           <StackNavigation
             navigatorUID="schedule"
-            defaultRouteConfig={defaultRouteConfig}
+            // defaultRouteConfig={defaultRouteConfig}
             initialRoute={Router.getRoute('schedule')}
           />
         </TabItem>
@@ -66,10 +93,10 @@ export default class NavigationLayout extends Component {
           renderTitle={this.renderTitle}
           renderIcon={isSelected => this.renderIcon('ios-heart', isSelected)}
         >
-          {/* <StackNavigation
+          <StackNavigation
             navigatorUID="faves"
             initialRoute={Router.getRoute('faves')}
-          /> */}
+          />
         </TabItem>
 
         <TabItem
@@ -82,7 +109,7 @@ export default class NavigationLayout extends Component {
         >
           <StackNavigation
             navigatorUID="about"
-            defaultRouteConfig={defaultRouteConfig}
+            // defaultRouteConfig={defaultRouteConfig}
             initialRoute={Router.getRoute('about')}
           />
         </TabItem>
