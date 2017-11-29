@@ -5,12 +5,16 @@ import LinearGradient from 'react-native-linear-gradient';
 import { goBack } from '../../lib/navigationHelpers';
 import styles from './styles.js';
 
-const Speaker = ({ speakerData }) => {
+const Speaker = ({ speakerData, navigatorUID }) => {
   return (
     <ScrollView style={styles.content}>
       <Header
         leftComponent={
-          <Icon name="close" color="#ffffff" onPress={() => goBack()} />
+          <Icon
+            name="close"
+            color="#ffffff"
+            onPress={() => goBack(navigatorUID)}
+          />
         }
         centerComponent={{
           text: 'About the Speaker',

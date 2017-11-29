@@ -44,6 +44,7 @@ class SessionContainer extends Component {
     StatusBar.setBarStyle('light-content');
 
     const { sessionData, speakerData } = this.props;
+    const navigatorUID = this.props.navigator.navigatorUID;
 
     if (this.props.isLoading) {
       return (
@@ -52,7 +53,13 @@ class SessionContainer extends Component {
         </View>
       );
     } else {
-      return <Session sessionData={sessionData} speakerData={speakerData} />;
+      return (
+        <Session
+          sessionData={sessionData}
+          speakerData={speakerData}
+          navigatorUID={navigatorUID}
+        />
+      );
     }
   }
 }

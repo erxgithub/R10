@@ -17,7 +17,13 @@ export default class SpeakerContainer extends Component {
 
   render() {
     StatusBar.setBarStyle('light-content');
-    return <Speaker speakerData={this.props.speakerData} />;
+    const navigatorUID = this.props.navigator.navigatorUID;
+    return (
+      <Speaker
+        speakerData={this.props.speakerData}
+        navigatorUID={navigatorUID}
+      />
+    );
   }
 }
 

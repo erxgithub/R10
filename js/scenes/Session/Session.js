@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
-import { goToSpeaker, closeSession } from '../../lib/navigationHelpers';
+import { goToSpeaker, goBack } from '../../lib/navigationHelpers';
 import Moment from 'react-moment';
 import 'moment-timezone';
 import LinearGradient from 'react-native-linear-gradient';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import Separator from '../../components/Separator';
 import { createFave, deleteFave } from '../../config/models.js';
 
 import styles from './styles.js';
 
-const Session = ({ sessionData, speakerData }) => {
+const Session = ({ sessionData, speakerData, navigatorUID }) => {
   //const { session_id } = sessionData;
   const faveId = sessionData.session_id;
 
   console.log(sessionData);
   console.log(speakerData);
+  console.log(navigatorUID);
 
   return (
     <View style={styles.session}>
-      <Text style={styles.location}>{sessionData.location}</Text>
+      <View style={styles.favourite}>
+        <Text style={styles.location}>{sessionData.location}</Text>
+        {sessionData.faveToggle ? (
+          <Icon name={'ios-heart'} size={24} color={'#cf392a'} />
+        ) : (
+          <Text />
+        )}
+      </View>
       <Text style={styles.title}>{sessionData.title}</Text>
       <View>
         <Moment
@@ -60,7 +69,7 @@ const Session = ({ sessionData, speakerData }) => {
           <Text
             onPress={() => {
               deleteFave(faveId);
-              closeSession();
+              goBack(navigatorUID);
             }}
             style={styles.buttonText}
           >
@@ -70,7 +79,7 @@ const Session = ({ sessionData, speakerData }) => {
           <Text
             onPress={() => {
               createFave(faveId);
-              closeSession();
+              goBack(navigatorUID);
             }}
             style={styles.buttonText}
           >

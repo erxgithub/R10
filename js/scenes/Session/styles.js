@@ -76,6 +76,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     paddingTop: 10,
     paddingBottom: 10
+  },
+  favourite: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   }
 });
 

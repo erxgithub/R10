@@ -19,6 +19,10 @@ const styles = StyleSheet.create({
   location: {
     fontSize: 15,
     color: '#999999'
+  },
+  favourite: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   }
 });
 

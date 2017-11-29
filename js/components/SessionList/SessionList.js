@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, SectionList } from 'react-native';
 import Moment from 'react-moment';
 import 'moment-timezone';
+import Icon from 'react-native-vector-icons/Ionicons';
 import Separator from '../Separator';
 import { goToSession } from '../../lib/navigationHelpers';
 import styles from './styles.js';
@@ -35,7 +36,14 @@ const SessionList = ({ currentNavigatorUID, sessionData }) => {
             >
               {item.title}
             </Text>
-            <Text style={styles.location}>{item.location}</Text>
+            <View style={styles.favourite}>
+              <Text style={styles.location}>{item.location}</Text>
+              {item.faveToggle ? (
+                <Icon name={'ios-heart'} size={18} color={'#cf392a'} />
+              ) : (
+                <Text />
+              )}
+            </View>
           </View>
         );
       }}
