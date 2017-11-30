@@ -1,9 +1,18 @@
 import React from 'react';
-import { ScrollView, FlatList, Text, View, Image } from 'react-native';
+import {
+  ScrollView,
+  FlatList,
+  Text,
+  View,
+  Image,
+  TouchableHighlight,
+  Animated
+} from 'react-native';
 import Separator from '../../components/Separator';
 import styles from './styles.js';
+import Panel from '../Panel';
 
-const About = ({ conductData, isLoading }) => {
+const About = ({ conductData, isLoading, toggleView }) => {
   //console.log('conductData', conductData);
   //console.log('isLoading', isLoading);
 
@@ -27,10 +36,11 @@ const About = ({ conductData, isLoading }) => {
       <FlatList
         data={conductData}
         renderItem={({ item }) => (
-          <View style={styles.conduct}>
-            <Text style={styles.title}>+ {item.title}</Text>
-            <Text style={styles.description}>{item.description}</Text>
-          </View>
+          // <View style={styles.conduct}>
+          //   <Text style={styles.title}>+ {item.title}</Text>
+          //   <Text style={styles.description}>{item.description}</Text>
+          // </View>
+          <Panel title={item.title} description={item.description} />
         )}
         keyExtractor={item => item.title}
       />
