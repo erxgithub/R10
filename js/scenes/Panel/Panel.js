@@ -7,6 +7,7 @@ import {
   TouchableHighlight,
   Animated
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 // import styles from './styles.js';
 
 const Panel = ({
@@ -14,7 +15,7 @@ const Panel = ({
   setMinHeight,
   setMaxHeight,
   toggle,
-  icon,
+  iconName,
   title,
   description
 }) => {
@@ -24,11 +25,12 @@ const Panel = ({
         <TouchableHighlight
           style={styles.button}
           onPress={toggle}
-          underlayColor="#f1f1f1"
+          // underlayColor="#f1f1f1"
         >
-          <Image style={styles.buttonImage} source={icon} />
+          {/* <Image style={styles.buttonImage} source={icon} /> */}
+          <Icon name={iconName} size={24} color={'#9963ea'} />
         </TouchableHighlight>
-        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.title}> {title}</Text>
       </View>
 
       <View style={styles.body} onLayout={setMaxHeight}>
