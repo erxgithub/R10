@@ -11,12 +11,12 @@ React Native, Redux, ExNavigation, Realm, and Moment.js.
 Download the repo, then run:
 
 ```bash
-cd client && npm install
+npm install
 ```
 
 ## Start-up
 
-From inside the `client` directory, run:
+From inside the project directory, run:
 
 ```bash
 react-native run-ios
