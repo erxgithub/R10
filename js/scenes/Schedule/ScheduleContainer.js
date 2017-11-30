@@ -39,8 +39,6 @@ class ScheduleContainer extends Component {
   }
 
   render() {
-    //console.log(this.props.sessionData);
-    // console.log('isloading', this.props.conductData);
     StatusBar.setBarStyle('light-content');
 
     if (this.props.isLoading) {

@@ -13,15 +13,10 @@ class PanelContainer extends Component {
   constructor(props) {
     super(props);
 
-    // this.icons = {
-    //   up: require('../../assets/images/Arrowhead-01-128.png'),
-    //   down: require('../../assets/images/Arrowhead-Down-01-128.png')
-    // };
-
     this.state = {
       title: props.title,
       description: props.description,
-      expanded: true,
+      expanded: false,
       animation: new Animated.Value()
     };
   }
@@ -57,11 +52,6 @@ class PanelContainer extends Component {
   }
 
   render() {
-    // let icon = this.icons['down'];
-
-    // if (this.state.expanded) {
-    //   icon = this.icons['up'];
-    // }
     let iconName = 'ios-add';
 
     if (this.state.expanded) {
@@ -70,11 +60,11 @@ class PanelContainer extends Component {
 
     return (
       <Panel
-        height={this.state.animation}
         setMinHeight={this._setMinHeight.bind(this)}
         setMaxHeight={this._setMaxHeight.bind(this)}
         toggle={this.toggle.bind(this)}
         iconName={iconName}
+        expanded={this.state.expanded}
         title={this.state.title}
         description={this.state.description}
       />

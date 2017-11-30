@@ -78,7 +78,6 @@ export const fetchFaves = () => dispatch => {
       return dispatch(getFavesSession(filteredSessions));
     })
     .catch(error => {
-      //console.log(error);
       return dispatch(getFavesError(error));
     });
 };

@@ -13,9 +13,6 @@ import styles from './styles.js';
 import Panel from '../Panel';
 
 const About = ({ conductData, isLoading, toggleView }) => {
-  //console.log('conductData', conductData);
-  //console.log('isLoading', isLoading);
-
   return (
     <ScrollView style={styles.about}>
       <View style={styles.logo}>
@@ -36,10 +33,6 @@ const About = ({ conductData, isLoading, toggleView }) => {
       <FlatList
         data={conductData}
         renderItem={({ item }) => (
-          // <View style={styles.conduct}>
-          //   <Text style={styles.title}>+ {item.title}</Text>
-          //   <Text style={styles.description}>{item.description}</Text>
-          // </View>
           <Panel title={item.title} description={item.description} />
         )}
         keyExtractor={item => item.title}

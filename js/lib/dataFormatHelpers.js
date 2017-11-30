@@ -6,7 +6,6 @@ export const formatDataObject = data => {
 
 // Helper to format Firebase data into section list data
 export const formatSessionData = sessions => {
-  //console.log(sessions);
   return sessions
     .reduce((acc, curr) => {
       const timeExists = acc.find(section => section.title === curr.start_time);

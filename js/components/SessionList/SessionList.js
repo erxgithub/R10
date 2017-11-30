@@ -8,7 +8,6 @@ import { goToSession } from '../../lib/navigationHelpers';
 import styles from './styles.js';
 
 const SessionList = ({ currentNavigatorUID, sessionData }) => {
-  console.log(sessionData);
   return (
     <SectionList
       sections={sessionData}

@@ -49,7 +49,6 @@ export const fetchSpeaker = speakerId => dispatch => {
         return dispatch(getSpeaker(speaker));
       })
       .catch(error => {
-        //console.log(error);
         return dispatch(getSpeakerError(error));
       });
   } else {

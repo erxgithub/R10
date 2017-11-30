@@ -41,7 +41,6 @@ export const fetchConduct = () => dispatch => {
       dispatch(getConduct(codeOfConduct));
     })
     .catch(error => {
-      //console.log(error);
       return dispatch(getConductError(error));
     });
 };

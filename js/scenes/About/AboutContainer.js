@@ -56,7 +56,6 @@ class AboutContainer extends Component {
   render() {
     StatusBar.setBarStyle('light-content');
 
-    // console.log('isloading', this.props.conductData);
     if (this.props.isLoading) {
       return (
         <View style={styles.loading}>

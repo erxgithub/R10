@@ -15,10 +15,6 @@ const Session = ({ sessionData, speakerData, navigatorUID }) => {
   //const { session_id } = sessionData;
   const faveId = sessionData.session_id;
 
-  console.log(sessionData);
-  console.log(speakerData);
-  console.log(navigatorUID);
-
   return (
     <View style={styles.session}>
       <View style={styles.favourite}>

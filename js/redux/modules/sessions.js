@@ -49,7 +49,6 @@ export const fetchSessions = () => dispatch => {
       return dispatch(getSessions(newSessions));
     })
     .catch(error => {
-      //console.log(error);
       return dispatch(getSessionsError(error));
     });
 };

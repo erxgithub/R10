@@ -39,12 +39,9 @@ class FavesContainer extends Component {
   }
 
   render() {
-    //console.log(this.props.sessionData);
-    // console.log('isloading', this.props.conductData);
     StatusBar.setBarStyle('light-content');
 
     if (this.props.isLoading) {
-      console.log('faves', this.props.sessionData);
       return (
         <View style={styles.loading}>
           <ActivityIndicator animating={true} size="small" color="black" />

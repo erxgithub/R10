@@ -3,24 +3,22 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   about: {
     margin: 10
-    // fontFamily: 'Montserrat-Regular',
-    // fontSize: 10
   },
   logo: {
     alignItems: 'center',
-    paddingTop: 5,
+    paddingTop: 10,
     paddingBottom: 5
   },
   separator: {
-    paddingTop: 10,
-    paddingBottom: 10
+    paddingTop: 15,
+    paddingBottom: 15
   },
   heading: {
     fontFamily: 'Montserrat-Regular',
     fontSize: 20,
     fontWeight: 'bold',
-    paddingTop: 10,
-    paddingBottom: 10
+    paddingTop: 15,
+    paddingBottom: 15
   },
   text: {
     fontFamily: 'Montserrat-Light',

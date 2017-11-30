@@ -35,6 +35,4 @@ export const queryFaves = () => {
 
 export default realm;
 
-// export default new Realm({ schema: [FaveSchema] });
-
-console.log('the path is: ', realm.path);
+// console.log('the path is: ', realm.path);
